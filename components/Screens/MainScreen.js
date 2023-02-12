@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Home from "./home/Home";
 import Setting from "./settings/Setting";
 import Map from "./map/Map";
+import SendSMS from "./SMS/SendSMS";
 
  const  MainScreen = () => {
     const Tab = createBottomTabNavigator();
@@ -22,6 +23,9 @@ import Map from "./map/Map";
                     } else if (route.name === 'Másnak') {
                         iconName = 'map';
                     }
+                    else if (route.name === 'SMS') {
+                        iconName = 'map';
+                    }
 
                     return <MaterialCommunityIcons name={iconName} size={size} color={color}/>;
                 },
@@ -31,8 +35,10 @@ import Map from "./map/Map";
             })}
         >
             <Tab.Screen name="Home" component={Home}/>
-            <Tab.Screen name="Settings" component={Map}/>
-            <Tab.Screen name="Másnak" component={Setting}/>
+            <Tab.Screen name="Másnak" component={Map}/>
+            <Tab.Screen name="Settings" component={Setting}/>
+            <Tab.Screen name="SMS" component={SendSMS}/>
+
         </Tab.Navigator>
     )
 };
